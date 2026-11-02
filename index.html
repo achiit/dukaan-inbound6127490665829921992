@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071747">
+<title>Rupaiya Online — Refer & Earn</title>
+<style>
+:root{--navy:#06143d;--navy2:#0a1e57;--blue:#087dff;--cyan:#19e6ff;--gold:#ffd54a;--orange:#ff8d22;--purple:#7c35ff;--muted:#a9bce9;--green:#00e78a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 20% 0%,#162d75 0,#091846 38%,#040d2b 100%);color:#f7f9ff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer}.app{max-width:520px;margin:0 auto;min-height:100vh;padding-bottom:88px;position:relative;overflow:hidden;background:linear-gradient(150deg,rgba(14,35,91,.72),rgba(3,12,43,.88));border-left:1px solid #1b3b86;border-right:1px solid #1b3b86}
+header{padding:18px 17px 10px;display:flex;align-items:center;gap:12px}.avatar{width:49px;height:49px;flex:0 0 49px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#c4e8ff,#7c9dce);font-size:27px}.brandmark{font-size:36px;font-weight:900;line-height:1;background:linear-gradient(130deg,#42fff2,#168cff,#b448ff,#ffd34b);background-clip:text;color:transparent;text-shadow:0 0 18px #12bfff55}.brand-title{font-size:20px;font-weight:850;line-height:1.2}.brand-sub{color:#c5d4ff;font-size:12px}
+.balance{margin:8px 15px 12px;padding:14px;border-radius:17px;background:linear-gradient(115deg,#ffda55,#ffab24 58%,#ff7c26);color:#1a1730;display:flex;align-items:center;justify-content:space-between;gap:8px;border:2px solid #ffe68a;box-shadow:0 5px 22px #ff9c2d35}.balance small{display:block;font-size:12px;letter-spacing:.3px}.amount{font-size:27px;font-weight:900;white-space:nowrap}.withdraw{border:1px solid #7beaff;border-radius:12px;padding:11px 12px;color:white;font-weight:800;background:linear-gradient(#139cff,#0054eb);box-shadow:0 3px 12px #008bff70;white-space:nowrap;font-size:13px}
+.tabs{display:flex;justify-content:space-around;border-top:1px solid #3157a0;border-bottom:1px solid #3157a0;margin:0 0 15px}.tab{background:transparent;border:0;color:#c6d5ff;padding:13px 8px 11px;flex:1;font-weight:650;border-bottom:3px solid transparent}.tab.active{color:var(--gold);border-bottom-color:var(--gold);text-shadow:0 0 10px #ffc62966}
+main{padding:0 15px}.page{display:none;animation:fade .22s ease}.page.active{display:block}@keyframes fade{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
+.banner{position:relative;overflow:hidden;border:1px solid #a65cff;border-radius:17px;padding:20px 17px;background:radial-gradient(circle at 90% 20%,#ec39ff 0,transparent 30%),linear-gradient(115deg,#0868ff,#3410ba 70%,#7512cc);box-shadow:0 0 20px #633dff55;margin-bottom:13px;min-height:130px}.banner:after{content:"🎁";position:absolute;right:12px;bottom:10px;font-size:70px;filter:drop-shadow(0 4px 8px #1117)}.coins{position:absolute;right:94px;top:12px;font-size:22px;opacity:.95}.banner h1{margin:0 0 8px;color:#ffdf65;font-size:23px;line-height:1.2;max-width:75%}.banner p{margin:0;font-weight:650;font-size:13px;line-height:1.45;max-width:78%}
+.panel{border:1px solid #4264b5;border-radius:16px;padding:14px;margin:12px 0;background:linear-gradient(120deg,#0c2055dd,#151d4edd);box-shadow:inset 0 0 18px #193b7d25}.panel h2{font-size:18px;margin:0 0 9px}.status{border:2px solid #10dff4;display:flex;align-items:center;gap:13px;padding:13px 15px}.status-dot{width:35px;height:35px;border-radius:50%;background:radial-gradient(circle,#9affd1,#00dc88 65%);box-shadow:0 0 17px #00ffb2;flex:0 0 auto}.status strong{color:var(--green)}
+.alert{border-color:#ffad37}.alert h2{color:#ffd87a}.alert p{margin:8px 0;font-size:14px}.section-title{display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:850;margin:18px 0 10px}.section-title span{font-size:12px;color:#ffd77a;font-weight:600}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.task-card{padding:13px 11px;border-radius:16px;border:1px solid #16d7ff;background:linear-gradient(140deg,#073a50,#09235a 80%);box-shadow:0 0 15px #00d9ff20}.task-card.purple{border-color:#c26aff;background:linear-gradient(140deg,#29106a,#1a1c58)}.task-icon{font-size:29px}.task-card h3{font-size:14px;margin:7px 0 3px}.reward{color:#ffda56;font-size:20px;font-weight:900}.task-card p{font-size:12px;color:#c8d8ff;margin:3px 0 12px}.primary,.secondary{width:100%;border:1px solid #7afff0;border-radius:12px;padding:11px 8px;font-weight:850;color:#fff;background:linear-gradient(100deg,#00bf9d,#00e4c8);box-shadow:0 3px 14px #00e4c855}.secondary{border-color:#ffd783;background:linear-gradient(100deg,#ff9a28,#ffd24b);color:#251538;box-shadow:0 3px 12px #ffad3055}.wide{margin-top:12px}
+.task-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #30477e}.task-row:last-child{border-bottom:0}.task-row .emoji{font-size:31px;width:42px;text-align:center}.task-row .details{flex:1}.task-row h3{margin:0;font-size:15px}.task-row p{margin:3px 0 0;color:#c3d2f8;font-size:12px}.task-row button{width:auto;min-width:90px;padding:9px 12px}
+.profile{display:flex;align-items:center;gap:13px;background:linear-gradient(110deg,#09295d,#352052);border:1px solid #b86aff;border-radius:16px;padding:17px;margin:8px 0 15px}.profile .avatar{width:62px;height:62px;font-size:33px}.profile strong{font-size:17px}.profile .code{color:#ffd45d;font-size:19px;font-weight:900}.menu-item{padding:15px 5px;display:flex;align-items:center;gap:13px;border-bottom:1px solid #30477e;font-size:15px}.menu-item:last-child{border:0}.menu-item[role="button"]{cursor:pointer}.menu-item[role="button"]:focus{outline:2px solid #20dfff;outline-offset:2px;border-radius:8px}.menu-item .emoji{font-size:23px;width:31px}.menu-item .arrow{margin-left:auto;color:#ffce6c;font-size:22px}
+.progress-levels{display:flex;justify-content:space-between;gap:4px;margin:17px 0 4px}.level{flex:1;text-align:center}.bubble{border-radius:30px;background:#f2f4fb;color:#11162b;font-weight:850;padding:7px 3px;font-size:13px}.level:first-child .bubble{background:#078fff;color:white}.level small{display:block;color:#b9d0ff;font-size:10px;margin-top:7px}.progressbar{height:8px;border-radius:9px;background:#35466f;margin:12px 4px;overflow:hidden}.progressbar div{width:10%;height:100%;background:linear-gradient(90deg,#00e9e5,#078bff);border-radius:9px}
+.referral-hero{background:linear-gradient(110deg,#142b83,#6515a6);border:1px solid #a85cff;border-radius:16px;padding:17px;margin:8px 0 15px}.referral-hero h2{margin:0 0 6px;color:#ffdf71}.referral-hero p{margin:0;font-size:13px}.share-link{display:flex;gap:7px;margin-top:13px}.share-link input{min-width:0;flex:1;border:1px solid #5a75bc;background:#06153d;color:white;border-radius:10px;padding:10px;font-size:12px}
+footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);display:grid;grid-template-columns:repeat(4,1fr);background:#06153df2;border-top:1px solid #3158a3;backdrop-filter:blur(12px);padding:7px 3px max(8px,env(safe-area-inset-bottom));z-index:5}.navbtn{border:0;background:transparent;color:#68cfff;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;padding:4px 0}.navbtn .nav-icon{font-size:24px;line-height:1.1}.navbtn.active{color:#ffd54a}.notice{border:1px solid #4966a6;border-radius:12px;background:#081942;padding:11px;font-size:12px;color:#bdcdf5;margin:14px 0}.modal-backdrop{display:none;position:fixed;inset:0;background:#020819cc;z-index:10;align-items:center;justify-content:center;padding:20px}.modal-backdrop.show{display:flex}.modal{width:min(420px,100%);background:#0b1d4c;border:1px solid #43cfff;border-radius:18px;padding:20px;box-shadow:0 0 30px #007dff44}.modal h2{margin:0 0 12px}.modal p{color:#c8d8ff;font-size:13px;line-height:1.5}.modal input{width:100%;margin:7px 0;padding:12px;border:1px solid #4568aa;background:#061238;color:white;border-radius:10px}.modal-actions{display:flex;gap:9px;margin-top:12px}.modal-actions button{flex:1}.close{background:transparent;color:#cbd8ff;border:1px solid #4a6199;border-radius:10px;padding:10px}
+
+@media(max-width:370px){.amount{font-size:23px}.withdraw{font-size:11px;padding:10px 8px}.banner h1{font-size:20px}.grid{gap:8px}.task-card{padding:11px 8px}}
+
+.withdraw-shortcut{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 0 18px;padding:17px 16px;border:1px solid #e6bd65;border-radius:16px;background:linear-gradient(115deg,#14254e,#243b72 58%,#b78a32);color:#fff;box-shadow:0 5px 14px #0003}
+.withdraw-shortcut small{display:block;color:#f0d99a;font-size:11px;letter-spacing:.4px}.withdraw-shortcut strong{display:block;color:#ffd66a;font-size:25px;margin:3px 0}.withdraw-shortcut span{display:block;font-size:11px;color:#fff}.withdraw-shortcut button{border:1px solid #73dfff;border-radius:10px;padding:11px 13px;background:linear-gradient(#0aaeff,#0872e7);color:#fff;font-weight:700;white-space:nowrap}
+.withdraw-page{background:#101d43;color:#fff;margin:0 -15px;padding:0 15px 24px;min-height:calc(100vh - 190px)}
+.withdraw-heading{height:58px;margin:0 -15px 16px;padding:0 20px;display:grid;grid-template-columns:35px 1fr 35px;align-items:center;background:#14224a;color:#fff;font-size:20px}
+.back-button{border:0;background:transparent;font-size:34px;line-height:1;color:#e9c66c;text-align:left;padding:0}
+.withdraw-balance{padding:18px 16px 17px;border:1px solid #d8b25b;border-radius:13px;background:radial-gradient(circle at 65% 10%,#334775 0,#172650 45%,#b58a36 130%);color:#fff;box-shadow:0 5px 15px #0003}
+.wb-label{font-size:12px;color:#f0d89b;margin-bottom:3px}.wb-line{display:flex;align-items:center;justify-content:space-between;gap:8px}.wb-amount{font-size:clamp(25px,7vw,35px);font-weight:800;color:#ffd45c;white-space:nowrap}.withdraw-all{border:1px solid #42d6ff;background:linear-gradient(#0baeff,#0872e7);color:#fff;border-radius:9px;padding:10px 12px;font-size:12px;white-space:nowrap}.wb-limit{color:#fff;margin-top:8px;font-size:12px}
+.withdraw-note{font-size:13px;line-height:1.5;margin:14px 0 24px;color:#f1dba2}.withdraw-label{font-size:18px;margin:0 0 13px;color:#fff}
+.amount-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}.amount-option{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:14px 7px;min-height:82px;border:1px solid #d9b65f;border-radius:12px;background:#f8f8fb;color:#b3944c;text-align:center;box-shadow:0 4px 10px #0002}.amount-option b{font-size:24px}.amount-option span{font-size:12px;color:#333}.amount-option.selected{background:linear-gradient(125deg,#f0c34e,#b98524);color:#fff;border:2px solid #ffe18a}.amount-option.selected span{color:#fff}
+.bank-card{margin-top:18px;padding:17px 12px;border-radius:15px;background:#172750;text-align:center}.bank-card h3{font-size:15px;margin:0 0 17px;color:#fff}.add-bank{width:100%;border:2px dashed #3b9df6;border-radius:12px;padding:17px 8px;background:#1d3566;color:#fff;font-size:16px}.bank-disclaimer{font-size:10px;color:#b6c7e8;line-height:1.4;margin:10px 0 0}.withdraw-submit{width:100%;margin:17px 0 0;padding:14px;border:0;border-radius:18px;background:#aeb5c4;color:#fff;font-size:16px}.withdraw-submit.ready{background:linear-gradient(#10baff,#0872e7)}
+
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="avatar">👤</div><div class="brandmark">R</div><div><div class="brand-title">Rupaiya Online</div><div class="brand-sub">Refer &amp; Earn Big</div></div></header>
+
+<main>
+<section class="page active" id="home">
+  <div class="withdraw-shortcut">
+    <div><small>ACCOUNT BALANCE</small><strong>₹2,500.00</strong><span>Daily withdrawal limit: 3</span></div>
+    <button onclick="showPage('withdrawPage')">Withdraw</button>
+  </div>
+
+<div class="banner"><div class="coins">🪙 ✨ 🪙</div><h1>Welcome back!</h1><p>Task Poore Karein, Roz Kamayein!<br>(Complete Tasks, Earn Daily!)</p></div>
+<div class="panel status"><div class="status-dot"></div><div><h2>Daily Income Status</h2><strong>Active ●</strong></div></div>
+<div class="panel alert"><h2>🔔 Important Alerts &amp; Events</h2><p>🔥 WhatsApp Connect Reward is now <b style="color:#ffdc55">₹200.00!</b></p><p>👥 Per Refer Reward is now <b style="color:#ffdc55">₹300.00!</b></p></div>
+<div class="section-title">Task Progress Overview <span>Quick Dashboard</span></div>
+<div class="grid">
+<div class="task-card"><div class="task-icon">🟢</div><h3>Connect WhatsApp</h3><div class="reward">₹200.00</div><p>Daily reward</p><button class="primary" onclick="showPage('whatsappConnect')">Start ›</button></div>
+<div class="task-card purple"><div class="task-icon">🧑‍🤝‍🧑</div><h3>Invite Friends</h3><div class="reward">₹300.00</div><p>Per referral</p><button class="secondary" onclick="showPage('team')">Invite ›</button></div>
+</div>
+<div class="notice">Demo website: balance and reward figures are sample display values. No real payment or payout is processed.</div>
+</section>
+<section class="page" id="tasks">
+<div class="section-title">Available Tasks <span>Daily rewards</span></div>
+<div class="panel">
+<div class="task-row"><div class="emoji">🗓️</div><div class="details"><h3>Get Daily Bonus</h3><div class="reward">₹10.00</div><p id="bonusText">Daily demo bonus</p></div><button class="secondary" id="bonusBtn" onclick="claimBonus()">Claim Now</button></div>
+<div class="task-row"><div class="emoji">🟢</div><div class="details"><h3>Connect WhatsApp</h3><div class="reward">₹200.00</div><p>Open WhatsApp to share an invite message</p></div><button class="primary" onclick="showPage('whatsappConnect')">Start</button></div>
+<div class="task-row"><div class="emoji">🎁</div><div class="details"><h3>Invite Friends</h3><div class="reward">₹300.00</div><p>Per referral (sample reward)</p></div><button class="secondary" onclick="showPage('team')">Invite</button></div>
+</div>
+<div class="notice">Task buttons are demo interactions. A real reward system requires a secure backend and verified reward rules.</div>
+</section>
+<section class="page" id="team">
+<div class="referral-hero"><h2>Get Instant Rewards!</h2><h2 style="color:white">Refer &amp; Earn</h2><p>Apne doston ko invite karein aur referral link share karein.</p><div class="share-link"><input id="refLink" value="https://example.com/?ref=E0LD1F" readonly><button class="primary" style="width:auto" onclick="copyLink()">Copy</button></div></div>
+<div class="panel"><h2>Share your link &amp; earn rewards</h2><div class="grid"><div class="task-card"><div class="task-icon">🧑‍🤝‍🧑</div><h3>Invite Friend</h3><div class="reward">₹300</div></div><div class="task-card purple"><div class="task-icon">🎁</div><h3>Referral Reward</h3><div class="reward">₹300</div></div></div>
+<div class="progress-levels"><div class="level"><div class="bubble">₹1500</div><small>5 Users</small></div><div class="level"><div class="bubble">₹3000</div><small>10 Users</small></div><div class="level"><div class="bubble">₹9000</div><small>30 Users</small></div><div class="level"><div class="bubble">₹15000</div><small>50 Users</small></div></div><div class="progressbar"><div></div></div><button class="primary wide" onclick="shareInvite()">Invite Now · ₹300 Per Referral</button></div>
+<div class="notice">Referral link shown here is a placeholder. Replace it with your real domain before publishing.</div>
+</section>
+
+
+
+
+<section class="page" id="withdrawHistory" style="margin:0 -15px;min-height:calc(100vh - 190px);background:linear-gradient(180deg,#0b1c48,#111b3a);padding:0 15px 28px">
+  <div style="height:58px;margin:0 -15px;padding:0 20px;display:grid;grid-template-columns:35px 1fr 35px;align-items:center;background:#14224a;border-bottom:1px solid #31518d;font-size:20px">
+    <button onclick="showPage('me')" aria-label="Back" style="border:0;background:transparent;color:#f0d18a;font-size:34px;text-align:left;padding:0">‹</button>
+    <strong style="text-align:center">Withdrawals</strong><span></span>
+  </div>
+  <div class="withdraw-history-tabs" style="display:flex;justify-content:space-between;gap:4px;margin:0 -15px 18px;padding:0 8px;background:#10204b;border-bottom:1px solid #304d88">
+    <button class="history-tab active" data-status="All" onclick="filterWithdrawHistory('All')">All</button>
+    <button class="history-tab" data-status="Pending" onclick="filterWithdrawHistory('Pending')">Pending</button>
+    <button class="history-tab" data-status="Processing" onclick="filterWithdrawHistory('Processing')">Processing</button>
+    <button class="history-tab" data-status="Success" onclick="filterWithdrawHistory('Success')">Success</button>
+    <button class="history-tab" data-status="Failed" onclick="filterWithdrawHistory('Failed')">Failed</button>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px">
+    <button class="history-date active" data-range="All Dates" onclick="filterWithdrawDate('All Dates')">All Dates</button>
+    <button class="history-date" data-range="Today" onclick="filterWithdrawDate('Today')">Today</button>
+    <button class="history-date" data-range="Yesterday" onclick="filterWithdrawDate('Yesterday')">Yesterday</button>
+    <button class="history-date" data-range="Last 7 Days" onclick="filterWithdrawDate('Last 7 Days')">Last 7 Days</button>
+  </div>
+  <div id="withdrawHistoryList" style="min-height:260px">
+    <div style="text-align:center;color:#9eabc8;padding:55px 10px">No withdrawal records yet</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;justify-content:center;color:#77839f;margin:22px 0 0">
+    <span style="height:1px;background:#293758;flex:1"></span><span>No more records</span><span style="height:1px;background:#293758;flex:1"></span>
+  </div>
+</section>
+<style>
+.history-tab{flex:1;min-width:0;padding:15px 2px 12px;border:0;border-bottom:3px solid transparent;background:transparent;color:#aab8d6;font-size:clamp(11px,3.2vw,15px)}
+.history-tab.active{color:#ffd36c;border-bottom-color:#2867ff}
+.history-date{padding:10px 2px;border:1px solid #e2bf72;border-radius:9px;background:transparent;color:#f2d184;font-size:clamp(10px,2.8vw,14px);white-space:nowrap}
+.history-date.active{background:#293b65;box-shadow:0 0 8px #e2bf7233}
+.withdraw-record{display:flex;align-items:center;gap:12px;margin:12px 0;padding:18px 13px;border:1px solid #92723b;border-radius:16px;background:linear-gradient(110deg,#4a3c18,#54451d);color:#fff}
+.withdraw-record .record-icon{width:52px;height:52px;flex:0 0 52px;border-radius:50%;display:grid;place-items:center;background:#13884e;color:#ffe28b;font-size:27px}
+.withdraw-record .record-main{min-width:0;flex:1}
+.withdraw-record .record-status{font-size:17px;color:#53d47a}
+.withdraw-record .record-date{font-size:13px;color:#e5dfd0;margin-top:4px}
+.withdraw-record .record-amount{font-size:18px;color:#ffd15d;white-space:nowrap}
+</style>
+<section class="page withdraw-page" id="withdrawPage">
+  <div class="withdraw-heading"><button class="back-button" onclick="showPage('home')" aria-label="Back">‹</button><strong>Withdraw</strong><span></span></div>
+  <div class="withdraw-balance">
+    <div class="wb-label">ACCOUNT BALANCE</div>
+    <div class="wb-line"><div class="wb-amount">₹2,500.00</div><button class="withdraw-all" onclick="selectWithdrawAll()">Withdraw All</button></div>
+    <div class="wb-limit">Daily withdrawal limit: 3</div>
+  </div>
+  <p class="withdraw-note">Withdraw all available over ₹100, Current Bank Service Fee: 0%</p>
+  <h3 class="withdraw-label">निकासी राशि</h3>
+  <div class="amount-options">
+    <button class="amount-option" data-amount="200" onclick="selectAmount(200)"><b>₹200.00</b><span>Fee: ₹0.00</span></button>
+    <button class="amount-option" data-amount="500" onclick="selectAmount(500)"><b>₹500.00</b><span>Fee: ₹0.00</span></button>
+    <button class="amount-option" data-amount="1000" onclick="selectAmount(1000)"><b>₹1000.00</b><span>Fee: ₹0.00</span></button>
+    <button class="amount-option" data-amount="2000" onclick="selectAmount(2000)"><b>₹2000.00</b><span>Fee: ₹0.00</span></button>
+  </div>
+  <div class="bank-card">
+    <h3 id="withdrawPrompt">Please select the withdrawal amount</h3>
+    <button class="add-bank" onclick="showBankInfo()">＋ Add Bank Cards First</button>
+    <p class="bank-disclaimer">Preview only. No bank details are stored and no payment is processed.</p>
+  </div>
+  <button class="withdraw-submit" onclick="submitWithdrawal()">Submit</button>
+</section>
+
+
+<section class="page withdraw-page" id="withdrawChargePage">
+  <div class="withdraw-heading">
+    <button class="back-button" onclick="showPage('withdrawPage')" aria-label="Back">‹</button>
+    <strong>Withdrawal Charge</strong><span></span>
+  </div>
+  <div class="panel alert" style="text-align:center;margin-top:22px">
+    <div style="font-size:42px">⚠️</div>
+    <h2>Withdrawal charge: ₹999</h2>
+    <p>This is a demo display only. No fee is being collected and no payment should be made.</p>
+  </div>
+  <div class="withdraw-balance" style="margin-top:16px">
+    <div class="wb-label">DEMO CHARGE</div>
+    <div class="wb-amount">₹999.00</div>
+    <div class="wb-limit">This preview does not process withdrawals or collect money.</div>
+  </div>
+  <button class="withdraw-submit ready" onclick="alert('Demo only — no fee collected and no withdrawal submitted.')">Continue (Demo Only)</button>
+</section>
+
+<section class="page" id="me">
+<div class="profile"><div class="avatar">👤</div><div><strong>91854XXXXX76</strong><div style="font-size:12px;margin-top:4px">Referral/Invitation Code:</div><div class="code">E0LD1F</div></div></div>
+<div class="panel">
+<div class="menu-item" role="button" tabindex="0" onclick="showInfo('income')" onkeydown="menuKey(event,'income')"><span class="emoji">📊</span>Income Details <span class="arrow">›</span></div>
+<div class="menu-item" role="button" tabindex="0" onclick="showPage('withdrawHistory')" onkeydown="menuKey(event,'withdrawHistory')"><span class="emoji">💸</span>Withdrawal Details <span class="arrow">›</span></div>
+<div class="menu-item" role="button" tabindex="0" onclick="showInfo('messages')" onkeydown="menuKey(event,'messages')"><span class="emoji">✉️</span>Important Messages <span class="arrow">›</span></div>
+<div class="menu-item" role="button" tabindex="0" onclick="showPage('team')" onkeydown="menuKey(event,'team')" style="cursor:pointer"><span class="emoji">👥</span>My Team <span class="arrow">›</span></div>
+<div class="menu-item" role="button" tabindex="0" onclick="openModal('passwordModal')" onkeydown="menuKey(event,'password')" style="cursor:pointer"><span class="emoji">🔒</span>Change Password <span class="arrow">›</span></div>
+<button class="close wide" style="width:100%" onclick="logoutDemo()">Logout</button>
+</div>
+<div class="notice">Profile information is example content. No real user account is connected.</div>
+</section>
+</main>
+<footer>
+<button class="navbtn active" data-page="home"><span class="nav-icon">⌂</span>Home</button>
+<button class="navbtn" data-page="tasks"><span class="nav-icon">☑</span>Tasks</button>
+<button class="navbtn" data-page="team" onclick="showPage('team')"><span class="nav-icon">☏</span>Team/WhatsApp</button>
+<button class="navbtn" data-page="me"><span class="nav-icon">♙</span>Me</button>
+</footer>
+</div>
+<div class="modal-backdrop" id="infoModal"><div class="modal"><h2 id="infoTitle">Details</h2><div id="infoContent"></div><div class="modal-actions"><button class="primary" onclick="closeModal('infoModal')">Close</button></div></div></div>
+<div class="modal-backdrop" id="passwordModal"><div class="modal"><h2>Change Password</h2><p>Demo only — connect a secure authentication backend to enable this feature.</p><input type="password" placeholder="Current password" disabled><input type="password" placeholder="New password" disabled><div class="modal-actions"><button class="primary" onclick="closeModal('passwordModal')">Close</button></div></div></div>
+<script>
+function showPage(name){
+  const page=document.getElementById(name);
+  if(!page)return;
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===name));
+  document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===name));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('[data-page]').forEach(b=>{
+  b.addEventListener('click',()=>showPage(b.dataset.page));
+});
+function openModal(id){const el=document.getElementById(id);if(el)el.classList.add('show')}
+function closeModal(id){const el=document.getElementById(id);if(el)el.classList.remove('show')}
+document.querySelectorAll('.modal-backdrop').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('show')}));
+function menuKey(event,action){if(event.key==='Enter'||event.key===' '){event.preventDefault();if(action==='team')showPage('team');else if(action==='password')openModal('passwordModal');else if(action==='withdrawHistory')showPage('withdrawHistory');else showInfo(action)}}
+function showInfo(type){
+ const title=document.getElementById('infoTitle'),content=document.getElementById('infoContent');
+ const data={
+  income:['Income Details','<p><b>Daily bonus:</b> ₹10.00 <span style="color:#9fb8ee">(demo)</span></p><p><b>WhatsApp task:</b> ₹200.00 <span style="color:#9fb8ee">(demo)</span></p><p><b>Referral reward:</b> ₹300.00 <span style="color:#9fb8ee">(demo)</span></p><p style="color:#a9bce9">These are sample figures only. No real earnings are recorded.</p>'],
+  history:['Withdrawal Details','<p>No withdrawal requests yet.</p><p style="color:#a9bce9">This preview is not connected to a payment service, so no real withdrawals can be submitted.</p>'],
+  messages:['Important Messages','<p>🎉 Welcome to Rupaiya Online!</p><p>Complete demo tasks and explore the referral screens.</p><p style="color:#a9bce9">Reward amounts shown are illustrative and are not guaranteed payments.</p>']
+ };
+ const item=data[type]||data.messages;title.textContent=item[0];content.innerHTML=item[1];openModal('infoModal');
+}
+let bonusClaimed=false;
+function claimBonus(){
+ if(bonusClaimed){alert('Daily demo bonus already claimed.');return}
+ bonusClaimed=true;
+ const btn=document.getElementById('bonusBtn');
+ btn.textContent='Claimed';btn.disabled=true;btn.style.opacity='.7';
+ document.getElementById('bonusText').textContent='Demo bonus claimed (display only)';
+ alert('Demo interaction complete. No real balance has been credited.');
+}
+function shareWhatsApp(){
+ const msg='Join me on Rupaiya Online! Referral code: E0LD1F';
+ const url='https://wa.me/?text='+encodeURIComponent(msg);
+ window.open(url,'_blank','noopener,noreferrer');
+}
+function shareInvite(){
+ const shareData={title:'Rupaiya Online',text:'Join me on Rupaiya Online! Referral code: E0LD1F',url:document.getElementById('refLink').value};
+ if(navigator.share){navigator.share(shareData).catch(()=>copyLink())}else{copyLink()}
+}
+function copyLink(){
+ const input=document.getElementById('refLink');
+ input.focus();input.select();input.setSelectionRange(0,99999);
+ const copied=()=>alert('Demo referral link copied. Replace example.com with your real website link before sharing.');
+ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(input.value).then(copied).catch(()=>fallbackCopy(input,copied))}
+ else{fallbackCopy(input,copied)}
+}
+function fallbackCopy(input,done){
+ try{const ok=document.execCommand('copy');if(ok)done();else alert('Copy failed. Please select and copy the link manually.')}
+ catch(e){alert('Copy failed. Please select and copy the link manually.')}
+}
+let activeWithdrawStatus='All';
+let activeWithdrawDate='All Dates';
+function filterWithdrawHistory(status){
+  activeWithdrawStatus=status;
+  document.querySelectorAll('.history-tab').forEach(b=>b.classList.toggle('active',b.dataset.status===status));
+  renderWithdrawHistory();
+}
+function filterWithdrawDate(range){
+  activeWithdrawDate=range;
+  document.querySelectorAll('.history-date').forEach(b=>b.classList.toggle('active',b.dataset.range===range));
+  renderWithdrawHistory();
+}
+function renderWithdrawHistory(){
+  const list=document.getElementById('withdrawHistoryList');
+  if(!list)return;
+  // No transaction backend is connected; never display invented payment records.
+  list.innerHTML='<div style="text-align:center;color:#9eabc8;padding:55px 10px">No withdrawal records yet</div>';
+}
+function logoutDemo(){if(confirm('Log out of this demo view?'))showPage('home')}
+
+let chosenWithdrawAmount=0;
+function selectAmount(amount){
+  chosenWithdrawAmount=amount;
+  document.querySelectorAll('.amount-option').forEach(b=>b.classList.toggle('selected',Number(b.dataset.amount)===amount));
+  const prompt=document.getElementById('withdrawPrompt');
+  if(prompt)prompt.textContent='Selected amount: ₹'+amount.toLocaleString('en-IN')+'.00';
+  const submit=document.querySelector('.withdraw-submit');
+  if(submit)submit.classList.add('ready');
+}
+function selectWithdrawAll(){selectAmount(2500);const prompt=document.getElementById('withdrawPrompt');if(prompt)prompt.textContent='Selected amount: ₹2,500.00 selected';}
+function showBankInfo(){alert('Preview only: bank-card linking is not connected. Do not enter real banking details here.');}
+function submitWithdrawal(){if(!chosenWithdrawAmount){alert('Please select the withdrawal amount first.');return;}showPage('withdrawChargePage');}
+
+</script>
+</body></html>
